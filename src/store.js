@@ -1,8 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
-import createReducer from "./createAdvice";
+import createReducer, { reducer } from "./createAdvice";
 
-export default configureStore({
-    reducer:{
-        advice: createReducer,
-    },
+const redu = {
+    add: createReducer
+}
+
+const store =  configureStore({
+    reducer: reducer,
+    devTools:true
 })
+
+export default store;
